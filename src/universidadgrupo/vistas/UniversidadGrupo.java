@@ -1,5 +1,5 @@
 
-package universidadgrupo;
+package universidadgrupo.vistas;
 
 import java.sql.Connection;
 import universidadgrupo.accesoAdatos.Conexion;
