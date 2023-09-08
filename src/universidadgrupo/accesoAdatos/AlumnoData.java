@@ -1,6 +1,6 @@
 package universidadgrupo.AccesoADatos;
 
-import universidadgrupo.Entidades.Alumno;
+import universidadgrupo.entidades.Alumno;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
