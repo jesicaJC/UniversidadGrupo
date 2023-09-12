@@ -34,7 +34,7 @@ public class MateriaData {
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, materia.getNombre());
-            ps.setString(2, materia.getCodigo()); // Get codigo es para pedir el "idMAteria" en la base de datos
+            ps.setString(2, materia.getCodigo()); // Get codigo es para pedir el "idMateria" en la base de datos
             ps.executeUpdate();
             ps.close();
         } catch (SQLException ex) {
