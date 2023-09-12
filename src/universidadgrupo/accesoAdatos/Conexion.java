@@ -20,7 +20,7 @@ public class Conexion {
         if(connection == null){ //es la primeras vez que vamos a invocar este metodo ahi se carga los drivrr de conexion.
             
             try {
-            Class.forName("org.mariasdb.jdbc.Driver");
+            Class.forName("org.mariadb.jdbc.Driver");
             connection = DriverManager.getConnection(URL+BD,USUARIO,CONTRASEÑA);
             
             JOptionPane.showInternalMessageDialog(null, "Conectado");
