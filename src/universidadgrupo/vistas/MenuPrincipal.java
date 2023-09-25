@@ -23,6 +23,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         jdesktopEscritorio = new javax.swing.JDesktopPane();
+        jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -42,15 +43,30 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jdesktopEscritorio.setPreferredSize(new java.awt.Dimension(670, 600));
 
+        jPanel1.setBackground(java.awt.SystemColor.activeCaption);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 494, Short.MAX_VALUE)
+        );
+
+        jdesktopEscritorio.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jdesktopEscritorioLayout = new javax.swing.GroupLayout(jdesktopEscritorio);
         jdesktopEscritorio.setLayout(jdesktopEscritorioLayout);
         jdesktopEscritorioLayout.setHorizontalGroup(
             jdesktopEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jdesktopEscritorioLayout.setVerticalGroup(
             jdesktopEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 494, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Alumno");
@@ -152,7 +168,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
          jdesktopEscritorio.removeAll();
       jdesktopEscritorio.repaint();
-      Inscripcion bpn= new Inscripcion();
+      InscripcionVista bpn= new InscripcionVista();
       bpn.setVisible(true);
       jdesktopEscritorio.add(bpn);
       jdesktopEscritorio.moveToFront(bpn);
@@ -227,6 +243,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JDesktopPane jdesktopEscritorio;
     // End of variables declaration//GEN-END:variables
 }

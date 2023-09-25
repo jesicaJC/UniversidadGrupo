@@ -1,4 +1,4 @@
-package universidadgrupo.AccesoADatos;
+package universidadgrupo.accesoAdatos;
 
 import universidadgrupo.entidades.Alumno;
 import java.sql.Connection;
@@ -12,7 +12,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 public class AlumnoData {
-
+          
     private Connection con = null;
 
     public AlumnoData() {
