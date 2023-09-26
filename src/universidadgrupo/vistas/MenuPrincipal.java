@@ -1,6 +1,6 @@
 
 package universidadgrupo.vistas;
-import universidadgrupo.AccesoAdatos.*;
+import universidadgrupo.accesoAdatos.*;
 
 public class MenuPrincipal extends javax.swing.JFrame {
 
