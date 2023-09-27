@@ -1,4 +1,4 @@
-package universidadgrupo.AccesoADatos;
+ package universidadgrupo.AccesoADatos;
 
 import universidadgrupo.entidades.Alumno;
 import java.sql.Connection;

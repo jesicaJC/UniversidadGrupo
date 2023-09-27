@@ -1,5 +1,8 @@
 
 package universidadgrupo.vistas;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import universidadgrupo.AccesoAdatos.*;
 
 public class MenuPrincipal extends javax.swing.JFrame {
@@ -22,7 +25,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
-        jdesktopEscritorio = new javax.swing.JDesktopPane();
+        ImageIcon icono = new ImageIcon(getClass().getResource("/C:/Users/HP/Documents/GitHub/Universidad/UniversidadGrupo/src/recursos/univ.jpg"));
+        Image image = icono.getImage();
+        jdesktopEscritorio = new javax.swing.JDesktopPane(){
+
+            public void paintComponent(Graphics g){
+                g.drawImage(image,0,0,getWidth(),getHeight(),this);
+            }
+        };
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -40,20 +50,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu principal");
 
-        jdesktopEscritorio.setPreferredSize(new java.awt.Dimension(670, 600));
-
         javax.swing.GroupLayout jdesktopEscritorioLayout = new javax.swing.GroupLayout(jdesktopEscritorio);
         jdesktopEscritorio.setLayout(jdesktopEscritorioLayout);
         jdesktopEscritorioLayout.setHorizontalGroup(
             jdesktopEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGap(0, 706, Short.MAX_VALUE)
         );
         jdesktopEscritorioLayout.setVerticalGroup(
             jdesktopEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 494, Short.MAX_VALUE)
+            .addGap(0, 324, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Alumno");
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/alumnos.png"))); // NOI18N
 
         jMenuItem2.setText("Formulario de Alumnos");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +73,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Materia");
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/materia.png"))); // NOI18N
 
         jMenuItem3.setText("Formulario de Materias");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +85,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("Administración");
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/administracion.png"))); // NOI18N
 
         jMenuItem4.setText("Manejo de Innscripciones");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +105,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setText("Consultas");
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/consultas.png"))); // NOI18N
 
         jMenuItem6.setText("Alumnos por Materia");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +117,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        jMenu5.setText("Salir");
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/salir.png"))); // NOI18N
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
@@ -118,11 +126,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jdesktopEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
+            .addComponent(jdesktopEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 706, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jdesktopEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+            .addComponent(jdesktopEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
         );
 
         pack();
@@ -227,6 +235,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JDesktopPane jdesktopEscritorio;
+    public javax.swing.JDesktopPane jdesktopEscritorio;
     // End of variables declaration//GEN-END:variables
 }

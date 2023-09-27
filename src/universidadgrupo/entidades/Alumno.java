@@ -1,5 +1,4 @@
 
-
 package universidadgrupo.entidades;
 
 import java.time.LocalDate;
