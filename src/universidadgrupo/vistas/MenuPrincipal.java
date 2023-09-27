@@ -3,7 +3,7 @@ package universidadgrupo.vistas;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
-import universidadgrupo.AccesoAdatos.*;
+import universidadgrupo.accesoAdatos.*;
 import universidadgrupo.entidades.Inscripcion;
 
 public class MenuPrincipal extends javax.swing.JFrame {
@@ -14,6 +14,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setSize(500, 520);
     }
 
     /**
@@ -26,7 +27,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
-        ImageIcon icono = new ImageIcon(getClass().getResource("/C:/Users/HP/Documents/GitHub/Universidad/UniversidadGrupo/src/recursos/univ.jpg"));
+        ImageIcon icono = new ImageIcon(getClass().getResource("/recursos/univ.jpg"));
         Image image = icono.getImage();
         jdesktopEscritorio = new javax.swing.JDesktopPane(){
 
@@ -127,11 +128,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jdesktopEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 706, Short.MAX_VALUE)
+            .addComponent(jdesktopEscritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jdesktopEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+            .addComponent(jdesktopEscritorio)
         );
 
         pack();

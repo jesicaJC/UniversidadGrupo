@@ -1,16 +1,30 @@
 
 package universidadgrupo.vistas;
 
-import universidadgrupo.AccesoAdatos.*;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import universidadgrupo.accesoAdatos.*;
 import universidadgrupo.accesoAdatos.AlumnoData;
+import universidadgrupo.entidades.Alumno;
 
 public class ActualizacionDeNotas extends javax.swing.JInternalFrame {
-
+ ArrayList<Alumno> listaA;
+    
+    private AlumnoData aData;
+    private DefaultTableModel modelo;
     /**
      * Creates new form ActualizacionDeNotas
      */
     public ActualizacionDeNotas() {
         initComponents();
+         initComponents();
+        aData= new AlumnoData();
+        listaA=(ArrayList<Alumno>)aData.listarAlumnos();
+        modelo= new DefaultTableModel();
+        cargarAlumnos();
+
+        armarCabeceraTabla();
+        
     }
 
     /**
@@ -25,7 +39,7 @@ public class ActualizacionDeNotas extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jCBselecAlu = new javax.swing.JComboBox<>();
+        jCBselecAlu = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
@@ -41,7 +55,6 @@ public class ActualizacionDeNotas extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Seleccione un Alumno:");
 
-        jCBselecAlu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jCBselecAlu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCBselecAluActionPerformed(evt);
@@ -141,11 +154,32 @@ public class ActualizacionDeNotas extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jCBselecAlu;
+    private javax.swing.JComboBox jCBselecAlu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+
+    private void cargarAlumnos() {
+        for (Alumno ite: listaA){
+            jCBselecAlu.addItem(ite);
+    
+    }
+    }
+
+    private void armarCabeceraTabla() {
+        ArrayList<Object> filaCabecera = new ArrayList();
+        filaCabecera.add("codigo");
+        filaCabecera.add("nombre");
+        filaCabecera.add("nota");
+        for (Object it: filaCabecera) {
+           modelo.addColumn(it);
+            
+        }
+        jTable1.setModel(modelo);
+        
+    }
 }
