@@ -1,14 +1,14 @@
 package universidadgrupo.accesoAdatos;
 
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Conexion {
 
     //Declaración de constantes de tipo String con información que utilizaremos para la conexión
-    private static final String URL = "jdbc:mariadb://localhost/";
+    private static final String URL = "jdbc:mariadb://localhost:3306/";
     private static final String DB = "universidadulp";
     private static final String USUARIO = "root";
     private static final String PASSWORD = "";
@@ -24,16 +24,14 @@ public class Conexion {
             try {
                 Class.forName("org.mariadb.jdbc.Driver");
                 //Setup the connection with the DB
-                connection = DriverManager.
-                        getConnection(URL + DB + "?useLegacyDatetimeCode=false&serverTimezone=UTC"
-                            + "&user=" + USUARIO + "&password=" + PASSWORD);
-
-                JOptionPane.showInternalMessageDialog(null, "Conectado");
+                connection = DriverManager.getConnection(URL + DB , USUARIO , PASSWORD);
+                           
+                JOptionPane.showMessageDialog(null, "Conectado");
             
             } catch (SQLException ex) {
-                JOptionPane.showInternalMessageDialog(null, "Error al conectarse a la BD "+ex.getMessage());
+                JOptionPane.showMessageDialog(null, "Error al conectarse a la BD "+ex.getMessage());
             } catch (ClassNotFoundException ex) {
-                JOptionPane.showInternalMessageDialog(null, "Error al cargar los Drivers"+ex.getMessage());
+                JOptionPane.showMessageDialog(null, "Error al cargar los Drivers"+ex.getMessage());
             }       
 
         }
