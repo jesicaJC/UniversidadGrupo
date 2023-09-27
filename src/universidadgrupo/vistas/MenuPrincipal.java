@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import universidadgrupo.AccesoAdatos.*;
+import universidadgrupo.entidades.Inscripcion;
 
 public class MenuPrincipal extends javax.swing.JFrame {
 
@@ -160,7 +161,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
          jdesktopEscritorio.removeAll();
       jdesktopEscritorio.repaint();
-      Inscripcion bpn= new Inscripcion();
+      InscripcionVista bpn= new InscripcionVista();
       bpn.setVisible(true);
       jdesktopEscritorio.add(bpn);
       jdesktopEscritorio.moveToFront(bpn);

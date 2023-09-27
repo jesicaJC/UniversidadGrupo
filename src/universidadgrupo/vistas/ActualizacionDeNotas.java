@@ -1,7 +1,8 @@
 
 package universidadgrupo.vistas;
 
-import universidadgrupo.AccesoADatos.AlumnoData;
+import universidadgrupo.AccesoAdatos.*;
+import universidadgrupo.accesoAdatos.AlumnoData;
 
 public class ActualizacionDeNotas extends javax.swing.JInternalFrame {
 
