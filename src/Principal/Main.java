@@ -14,7 +14,7 @@ import universidadgrupo.vistas.MenuPrincipal;
 
 public class Main {
     public static void main(String[] args) {
-       Connection con= Conexion.getConexion();
+//       Connection con= Conexion.getConexion();
        MenuPrincipal mp = new MenuPrincipal();
          mp.setVisible(true);
          mp.setLocationRelativeTo(null);

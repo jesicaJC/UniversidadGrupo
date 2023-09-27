@@ -26,6 +26,7 @@ universidadgrupo.accesoAdatos.AlumnoData aludata = new universidadgrupo.accesoAd
         initComponents();
         llenarCombo();
         armarCabecera();
+        
     }
 
     /**
@@ -54,7 +55,7 @@ universidadgrupo.accesoAdatos.AlumnoData aludata = new universidadgrupo.accesoAd
 
         jPanel1.setBackground(java.awt.SystemColor.activeCaption);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
         jLabel1.setText("Formulario de Inscripcion");
 
         jLabel2.setText(" Alumno:");
@@ -124,31 +125,31 @@ universidadgrupo.accesoAdatos.AlumnoData aludata = new universidadgrupo.accesoAd
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(materiasNo)
                 .addGap(80, 80, 80))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(inscribir)
-                .addGap(43, 43, 43)
-                .addComponent(anularInscripcion)
-                .addGap(73, 73, 73)
-                .addComponent(salir)
-                .addGap(63, 63, 63))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(107, 107, 107)
                         .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(SeleccioneAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(SeleccioneAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(inscribir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(anularInscripcion)
+                                .addGap(55, 55, 55)
+                                .addComponent(salir)
+                                .addGap(71, 71, 71)))))
+                .addContainerGap(29, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(52, 52, 52))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,12 +168,12 @@ universidadgrupo.accesoAdatos.AlumnoData aludata = new universidadgrupo.accesoAd
                     .addComponent(materiasNo))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inscribir)
                     .addComponent(anularInscripcion)
                     .addComponent(salir))
-                .addContainerGap())
+                .addGap(31, 31, 31))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -227,7 +228,7 @@ universidadgrupo.accesoAdatos.AlumnoData aludata = new universidadgrupo.accesoAd
             Materia mat = new Materia();
             mat.setIdMateria(idMateria);
            
-            Inscripcion insc = new Inscripcion(alumnoSeleccionado, mat, 0);
+            Inscripcion insc = new Inscripcion(alumnoSeleccionado, mat,0);
             indata.guardarInscripcion(insc);
         }else{
            JOptionPane.showMessageDialog(this, "Por favor seleccione una materia");
@@ -270,7 +271,7 @@ public void llenarCombo(){
 
 private void llenarTabla(){
 //       Exception in thread "AWT-EventQueue-0" java.lang.ClassCastException: java.lang.String cannot be cast to entidades.Alumno
-                Alumno alumnoSeleccionado = (Alumno)SeleccioneAlumno.getSelectedItem();
+              Alumno alumnoSeleccionado = (Alumno)SeleccioneAlumno.getSelectedItem();
                 
         if(materiasNo.isSelected()){
            
