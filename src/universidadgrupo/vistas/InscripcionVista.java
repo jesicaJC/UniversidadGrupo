@@ -221,9 +221,9 @@ universidadgrupo.accesoAdatos.AlumnoData aludata = new universidadgrupo.accesoAd
     private void inscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inscribirActionPerformed
         Alumno alumnoSeleccionado = (Alumno)SeleccioneAlumno.getSelectedItem();
         
-        int filasSelec=jTableMaterias.getSelectedRow();
-        if(filasSelec != -1){
-            int idMateria = (Integer)modelo.getValueAt(filasSelec, 0);//pongo un integer porque quiero pasarlo de Object a entero
+        int filasSelec=jTableMaterias.getSelectedRow();//fila selleccionada
+        if(filasSelec != -1){//verificar si selecciono algo
+            int idMateria = (Integer)modelo.getValueAt(filasSelec, 0);//el id de la materia lo recupero de la tabla. 1parametro fila2parametro columnapongo un integer porque quiero pasarlo de Object a entero
 //           
             Materia mat = new Materia();
             mat.setIdMateria(idMateria);

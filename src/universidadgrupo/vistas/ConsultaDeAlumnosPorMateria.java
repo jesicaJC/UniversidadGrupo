@@ -151,7 +151,7 @@ universidadgrupo.accesoAdatos.AlumnoData aludata = new universidadgrupo.accesoAd
     private javax.swing.JComboBox seleccionMateria;
     // End of variables declaration//GEN-END:variables
 public void llenarCombo(){
-//Guarda en la base
+
     for(Materia mat:matedata.listarMaterias()){ //LISTAR ALUMNOS
         seleccionMateria.addItem(mat);
     }
