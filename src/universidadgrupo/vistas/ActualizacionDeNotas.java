@@ -17,7 +17,7 @@ public class ActualizacionDeNotas extends javax.swing.JInternalFrame {
      */
     public ActualizacionDeNotas() {
         initComponents();
-         initComponents();
+        
         aData= new AlumnoData();
         listaA=(ArrayList<Alumno>)aData.listarAlumnos();
         modelo= new DefaultTableModel();
